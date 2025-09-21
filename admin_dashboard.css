@@ -1,0 +1,292 @@
+/* admin_dashboard.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Light grey background for admin areas */
+    color: #333;
+    font-size: 14px; /* Base font size for admin */
+}
+
+.admin-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-header-main {
+    background-color: #343a40; /* Dark header */
+    color: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.dashboard-header-main .header-content h1 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+.dashboard-header-main .header-content h1 i {
+    margin-right: 10px;
+}
+.dashboard-header-main .header-content p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #adb5bd;
+}
+
+.admin-nav a {
+    color: #ced4da;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+.admin-nav a:hover {
+    color: #fff;
+}
+.admin-nav i {
+    margin-right: 5px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Responsive cards */
+    gap: 20px;
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.card-icon {
+    font-size: 2.5em; /* Icon size */
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Fixed width for icon background */
+    height: 60px; /* Fixed height for icon background */
+}
+.card-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 600;
+}
+.card-content .stat-number {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #000;
+}
+.card-content span {
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+/* Card Specific Colors (Example Palette) */
+.users-card .card-icon { background-color: #007bff; /* Blue */ }
+.users-card .stat-number { color: #007bff; }
+
+.doctors-card .card-icon { background-color: #28a745; /* Green */ }
+.doctors-card .stat-number { color: #28a745; }
+
+.appointments-card .card-icon { background-color: #17a2b8; /* Teal */ }
+.appointments-card .stat-number { color: #17a2b8; }
+
+.pending-appointments-card .card-icon { background-color: #ffc107; /* Yellow */ }
+.pending-appointments-card .stat-number { color: #ffc107; }
+
+.services-card .card-icon { background-color: #fd7e14; /* Orange */ }
+.services-card .stat-number { color: #fd7e14; }
+
+.medicines-card .card-icon { background-color: #6610f2; /* Indigo */ }
+.medicines-card .stat-number { color: #6610f2; }
+
+.pharmacy-orders-card .card-icon { background-color: #e83e8c; /* Pink */ }
+.pharmacy-orders-card .stat-number { color: #e83e8c; }
+
+.prescriptions-card .card-icon { background-color: #6f42c1; /* Purple */ }
+.prescriptions-card .stat-number { color: #6f42c1; }
+
+/* Styles for the Recent Activity Section (as provided before) */
+.recent-activity-section {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 0 25px 25px 25px; /* Margin around it */
+    clear: both;
+}
+
+.recent-activity-section h2 {
+    font-size: 1.4em; /* Adjusted size */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.recent-activity-section h2 i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.table-responsive-wrapper {
+    overflow-x: auto;
+}
+
+.recent-activity-section table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.recent-activity-section th,
+.recent-activity-section td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.recent-activity-section thead th {
+    background-color: #f1f5f9; /* Lighter header */
+    font-weight: 600;
+    color: #334155; /* Darker text for header */
+    white-space: nowrap;
+}
+
+.recent-activity-section tbody tr:nth-child(even) {
+    background-color: #f8fafc; /* Subtle striping */
+}
+.recent-activity-section tbody tr:hover {
+    background-color: #eef2f7; /* Hover effect */
+}
+
+.status-badge {
+    padding: 3px 7px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+.status-scheduled, .status-pending-confirmation, .status-pending { background-color: #ffc107; color: #212529;}
+.status-confirmed { background-color: #28a745; }
+.status-completed { background-color: #6c757d; }
+.status-cancelled { background-color: #dc3545; }
+
+.action-link {
+    text-decoration: none;
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.action-link.view-link { color: #007bff; }
+.action-link.edit-link { color: #ffc107; }
+.action-link.delete-link { color: #dc3545; }
+.action-link:hover { opacity: 0.7; }
+
+.view-all-link {
+    text-align: right;
+    margin-top: 15px;
+}
+.view-all-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.view-all-link a:hover {
+    text-decoration: underline;
+}
+
+.no-data-message, .error-message-table { /* For table specific messages */
+    text-align: center;
+    padding: 15px;
+    color: #555;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+.error-message-table {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.dashboard-footer-main {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85em;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-header-main {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .dashboard-header-main .header-content {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .admin-nav {
+        margin-top: 10px;
+    }
+    .admin-nav a {
+        margin: 0 10px;
+    }
+    .dashboard-grid {
+        padding: 15px;
+        gap: 15px;
+    }
+    .recent-activity-section {
+        margin: 0 15px 15px 15px;
+        padding: 15px;
+    }
+    .recent-activity-section h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .card-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 2em; /* Slightly smaller on very small screens */
+        width: 50px;
+        height: 50px;
+    }
+    .card-content .stat-number {
+        font-size: 1.6em;
+    }
+}

@@ -1,0 +1,172 @@
+/* admin_edit_doctor_schedule_slot.css */
+/* Styles specific to the admin edit doctor schedule slot page */
+
+.admin-main-header .btn-back-admin {
+    background-color: #6B7280;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-main-header .btn-back-admin i {
+    margin-right: 8px;
+}
+.admin-main-header .btn-back-admin:hover {
+    background-color: #4B5563;
+    box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+}
+
+.edit-schedule-slot-section {
+    background-color: #FFFFFF;
+    padding: 30px 35px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    max-width: 700px; 
+    margin: 0 auto; 
+}
+
+.doctor-info-for-slot {
+    background-color: #EBF4FF; 
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4A55A2;
+    font-size: 0.95rem;
+    color: #2D3748;
+}
+.doctor-info-for-slot strong {
+    font-family: 'Montserrat', sans-serif;
+    color: #1A202C;
+}
+
+
+.admin-form { 
+    display: flex;
+    flex-direction: column;
+}
+.form-group-admin-schedule-edit {
+    margin-bottom: 20px;
+}
+.form-group-admin-schedule-edit label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+.required-star { color: #EF4444; }
+
+.form-group-admin-schedule-edit input[type="time"],
+.form-group-admin-schedule-edit select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    color: #111827;
+    background-color: #F9FAFB;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group-admin-schedule-edit input[type="time"]:focus,
+.form-group-admin-schedule-edit select:focus {
+    border-color: #3B82F6; /* Admin accent blue */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+.form-row-admin-schedule-edit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.form-row-admin-schedule-edit .form-group-admin-schedule-edit {
+    flex: 1;
+    min-width: 200px; 
+    margin-bottom: 0;
+}
+
+.btn-submit-admin-schedule-edit {
+    padding: 10px 22px;
+    background-color: #10B981; /* Green for update/save */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+.btn-submit-admin-schedule-edit:hover {
+    background-color: #059669; /* Darker Green */
+    transform: translateY(-1px);
+}
+
+/* Message Styling (can reuse from other admin CSS or define here if specific) */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+}
+.message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+.message.success-message-admin-form {
+    background-color: #dcfce7; color: #166534; border-color: #86efac;
+}
+.message.success-message-admin-form::before { content: "\f058"; color: #166534; }
+.message.error-message-admin-form {
+    background-color: #fee2e2; color: #991b1b; border-color: #fecaca;
+}
+.message.error-message-admin-form::before { content: "\f071"; color: #991b1b; }
+.message.error-message-admin-form ul { list-style-type: none; padding-left: 0; margin: 0; }
+.message.error-message-admin-form ul li { margin-bottom: 4px; }
+.message.error-message-admin-form ul li:last-child { margin-bottom: 0; }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .edit-schedule-slot-section {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+    .doctor-info-for-slot {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    .doctor-info-for-slot h2 { font-size: 1.3rem; }
+
+    .form-row-admin-schedule-edit {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-row-admin-schedule-edit .form-group-admin-schedule-edit {
+        margin-bottom: 20px;
+    }
+    .btn-submit-admin-schedule-edit {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,262 @@
+/* admin_manage_appointments.css */
+/* Styles specific to the admin appointments management page */
+
+.admin-main-header .btn-add-new-appt {
+    background-color: #0D6EFD; /* Bootstrap Primary Blue */
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-main-header .btn-add-new-appt i {
+    margin-right: 8px;
+}
+.admin-main-header .btn-add-new-appt:hover {
+    background-color: #0B5ED7; /* Darker Blue */
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+/* Filter Section Styles */
+.appointment-filters {
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+.filter-form-admin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end; /* Align items to bottom for consistent button height */
+    gap: 20px;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px; /* Minimum width for filter groups */
+}
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #495057; /* Tailwind gray-600 */
+    margin-bottom: 6px;
+}
+.filter-group select,
+.filter-group input[type="date"] {
+    padding: 9px 12px;
+    border: 1px solid #CED4DA; /* Tailwind gray-300 */
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8F9FA;
+}
+.filter-group select:focus,
+.filter-group input[type="date"]:focus {
+    border-color: #4A55A2; /* Accent color */
+    box-shadow: 0 0 0 0.2rem rgba(74, 85, 162, 0.2);
+    outline: none;
+}
+.filter-group .btn-filter-admin,
+.filter-group .btn-clear-filter-admin {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none; /* For the 'a' tag button */
+}
+.filter-group .btn-filter-admin i,
+.filter-group .btn-clear-filter-admin i {
+    margin-right: 6px;
+}
+.btn-filter-admin {
+    background-color: #4A55A2; /* Accent color */
+    color: #FFFFFF;
+    border: 1px solid #4A55A2;
+}
+.btn-filter-admin:hover {
+    background-color: #3c4687;
+    border-color: #3c4687;
+}
+.btn-clear-filter-admin {
+    background-color: #6C757D; /* Gray */
+    color: #FFFFFF;
+    border: 1px solid #6C757D;
+    margin-left: 5px; /* Space from filter button if in same group */
+}
+.btn-clear-filter-admin:hover {
+    background-color: #5A6268;
+    border-color: #5A6268;
+}
+
+
+/* Table Styles for Appointments */
+.table-container-admin {
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow-x: auto;
+}
+
+.admin-table.appointments-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem; /* Slightly smaller font for more data */
+}
+
+.admin-table.appointments-admin-table th,
+.admin-table.appointments-admin-table td {
+    padding: 10px 12px; /* Adjusted padding */
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    vertical-align: middle;
+}
+
+.admin-table.appointments-admin-table th {
+    background-color: #F9FAFB;
+    font-weight: 600;
+    color: #374151;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.7rem; /* Smaller header font */
+    white-space: nowrap;
+}
+
+.admin-table.appointments-admin-table tbody tr:hover {
+    background-color: #F3F4F6;
+}
+
+.status-badge-admin { /* Specific for admin table if needed, or reuse from appointments.css */
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    min-width: 75px;
+}
+.status-confirmed { background-color: #20C997; }
+.status-pending { background-color: #FFC107; color: #212529; }
+.status-cancelled { background-color: #DC3545; }
+.status-completed { background-color: #6C757D; }
+.status-rescheduled { background-color: #FD7E14; }
+
+
+.action-buttons-admin-appt {
+    white-space: nowrap;
+    text-align: center;
+}
+.action-buttons-admin-appt .btn-action-admin,
+.action-buttons-admin-appt .inline-form button {
+    color: #6B7280;
+    margin: 0 3px;
+    font-size: 0.95rem; /* Slightly smaller icons */
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 4px;
+    background: none; /* For buttons in forms */
+    border: none; /* For buttons in forms */
+    cursor: pointer; /* For buttons in forms */
+}
+.action-buttons-admin-appt .btn-action-admin:hover,
+.action-buttons-admin-appt .inline-form button:hover {
+    transform: scale(1.1);
+}
+
+.action-buttons-admin-appt .btn-action-admin.view:hover { color: #0D6EFD; }
+.action-buttons-admin-appt .btn-action-admin.confirm:hover,
+.action-buttons-admin-appt .inline-form button.confirm:hover { color: #198754; /* Green */ }
+.action-buttons-admin-appt .btn-action-admin.cancel:hover,
+.action-buttons-admin-appt .inline-form button.cancel:hover { color: #DC3545; /* Red */ }
+.action-buttons-admin-appt .btn-action-admin.complete:hover,
+.action-buttons-admin-appt .inline-form button.complete:hover { color: #0dcaf0; /* Info Blue */ }
+
+.inline-form {
+    display: inline; /* Allows multiple action buttons on one line */
+}
+
+
+.no-records-admin {
+    text-align: center;
+    padding: 20px;
+    color: #6B7280;
+    font-style: italic;
+}
+
+/* Message Styling (can reuse from other admin CSS or define here if specific) */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+}
+.message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+.message.success-message-admin-table {
+    background-color: #dcfce7; color: #166534; border-color: #86efac;
+}
+.message.success-message-admin-table::before { content: "\f058"; color: #166534; }
+.message.error-message-admin-table {
+    background-color: #fee2e2; color: #991b1b; border-color: #fecaca;
+}
+.message.error-message-admin-table::before { content: "\f071"; color: #991b1b; }
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .filter-form-admin {
+        gap: 15px; /* Reduce gap for filters */
+    }
+    .filter-group {
+        min-width: 160px; /* Adjust min-width for smaller screens */
+        flex-basis: calc(50% - 10px); /* Two filters per row */
+    }
+    .filter-group:last-of-type { /* Button group */
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .filter-group {
+        flex-basis: 100%; /* Stack filters */
+        min-width: unset;
+    }
+    .admin-table.appointments-admin-table th,
+    .admin-table.appointments-admin-table td {
+        font-size: 0.8rem;
+        padding: 8px 6px;
+    }
+}

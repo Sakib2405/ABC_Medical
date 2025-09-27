@@ -1,0 +1,63 @@
+/* === Prescription Detail Card Styles === */
+.prescription-detail-card {
+    background-color: #fff; /* White background for the card itself if container is colored */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.prescription-detail-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.prescription-detail-card .card-header h2 {
+    margin: 0;
+    color: #0056b3; /* Darker blue for heading */
+    font-size: 1.8em;
+}
+
+.prescription-detail-card .status { /* Using existing status styles but can be tweaked */
+    font-size: 1em;
+    padding: 5px 12px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-section p {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+/* Re-using .label from appointment details, or define specifically if needed */
+.detail-section .label {
+    font-weight: 600; /* Slightly bolder label */
+    color: #444;
+    display: inline-block;
+    min-width: 180px; /* Adjust for alignment */
+}
+
+.instructions {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    white-space: pre-wrap; /* Preserves line breaks from nl2br */
+}

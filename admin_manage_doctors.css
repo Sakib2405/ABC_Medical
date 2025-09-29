@@ -1,0 +1,264 @@
+/* admin_manage_doctors.css */
+
+/* Inherit some base styles from admin_dashboard.css or a common admin.css if available */
+/* For this example, assuming some common styles might be in admin_dashboard.css */
+
+.admin-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Consistent admin background */
+}
+
+.admin-content-area {
+    padding: 20px 25px;
+    flex-grow: 1;
+}
+
+/* Feedback Messages (can be common) */
+.message-feedback {
+    padding: 12px 15px; margin: 0 0 20px 0; border-radius: 5px;
+    text-align: center; font-size: 0.95em; border: 1px solid transparent;
+}
+.message-feedback.success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.message-feedback.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+
+/* Form Section */
+.form-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+.form-section h2 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.form-group {
+    margin-bottom: 10px; /* Reduced margin as gap handles spacing */
+}
+.form-group.form-group-full {
+    grid-column: 1 / -1; /* Make textarea span full width */
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    color: #495057;
+}
+.form-group label .required { color: #dc3545; }
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.95em;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+.form-group textarea#schedule_json {
+    font-family: "Courier New", Courier, monospace; /* Monospace for JSON */
+    font-size: 0.9em;
+    min-height: 150px;
+}
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+.form-group small code {
+    background-color: #e9ecef;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+
+.form-group-checkbox label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+.form-group-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.current-image-notice {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+.form-actions .button-primary,
+.form-actions .button-secondary {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.form-actions .button-primary {
+    background-color: #28a745;
+    color: white;
+    margin-right: 10px;
+}
+.form-actions .button-primary:hover { background-color: #218838; }
+.form-actions .button-primary i { margin-right: 5px; }
+
+.form-actions .button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.form-actions .button-secondary:hover { background-color: #5a6268; }
+
+
+/* List Section */
+.action-bar {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.add-new-button {
+    padding: 10px 18px;
+    font-size: 0.95em;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.add-new-button:hover { background-color: #0056b3; }
+.add-new-button i { margin-right: 6px; }
+
+
+.list-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.list-section h2 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.table-responsive-wrapper { overflow-x: auto; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+thead th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+}
+tbody tr:nth-child(even) { background-color: #f8fafc; }
+tbody tr:hover { background-color: #eef2f7; }
+
+.status-badge {
+    padding: 3px 7px; border-radius: 12px; font-size: 0.85em;
+    font-weight: 500; color: #fff; white-space: nowrap;
+}
+.status-active { background-color: #28a745; }
+.status-inactive { background-color: #dc3545; }
+
+.actions-cell {
+    white-space: nowrap; /* Prevent action buttons from wrapping */
+    text-align: center;
+}
+.action-link {
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 1.2em; /* Larger icons */
+    padding: 3px; /* Clickable area */
+}
+.action-link.edit-link { color: #ffc107; /* Yellow */ }
+.action-link.status-link.activate-link { color: #28a745; /* Green */ }
+.action-link.status-link.deactivate-link { color: #6c757d; /* Grey */}
+.action-link.view-link { color: #17a2b8; /* Teal */ }
+.action-link:hover { opacity: 0.7; }
+
+.no-data-message {
+    text-align: center;
+    padding: 15px;
+    color: #555;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack form fields */
+    }
+    .form-group.form-group-full {
+        grid-column: auto; /* Reset for stacked layout */
+    }
+    .action-bar {
+        text-align: left;
+    }
+     .admin-header-main {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .admin-header-main .header-content {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .admin-nav {
+        margin-top: 10px;
+    }
+    .admin-nav a {
+        margin: 0 10px;
+    }
+}

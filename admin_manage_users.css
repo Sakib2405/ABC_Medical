@@ -1,0 +1,205 @@
+/* admin_manage_users.css */
+/* Styles specific to the admin user management page */
+
+/* Re-use general admin layout styles from admin_dashboard.css */
+/* This file adds styles specific to the user table and its actions */
+
+.admin-main-header .btn-add-new {
+    background-color: #10B981; /* Green */
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-main-header .btn-add-new i {
+    margin-right: 8px;
+}
+.admin-main-header .btn-add-new:hover {
+    background-color: #059669; /* Darker Green */
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.table-container-admin {
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow-x: auto; /* For responsive tables */
+}
+
+.admin-table.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-table.users-table th,
+.admin-table.users-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB; /* Tailwind gray-200 */
+    vertical-align: middle;
+}
+
+.admin-table.users-table th {
+    background-color: #F9FAFB; /* Tailwind gray-50 */
+    font-weight: 600;
+    color: #374151; /* Tailwind gray-700 */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.admin-table.users-table tbody tr:hover {
+    background-color: #F3F4F6; /* Tailwind gray-100 */
+}
+
+.user-table-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #E5E7EB;
+}
+
+.role-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 1;
+}
+.role-admin {
+    background-color: #EF4444; /* Red for Admin */
+}
+.role-user {
+    background-color: #3B82F6; /* Blue for User */
+}
+/* Add more role styles if needed */
+/* .role-editor { background-color: #F59E0B; color: #1F2937; } */
+
+
+.action-buttons-admin {
+    white-space: nowrap;
+    text-align: center;
+}
+.action-buttons-admin .btn-action-admin {
+    color: #6B7280; /* Tailwind gray-500 */
+    margin: 0 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    padding: 6px; /* Make clickable area slightly larger */
+    border-radius: 4px;
+}
+.action-buttons-admin .btn-action-admin:hover {
+    transform: scale(1.1);
+}
+
+.action-buttons-admin .btn-action-admin.edit:hover { color: #F59E0B; /* Amber */ }
+.action-buttons-admin .btn-action-admin.role-toggle.promote:hover { color: #10B981; /* Green */ }
+.action-buttons-admin .btn-action-admin.role-toggle.demote:hover { color: #A0AEC0; /* Gray for demote */ }
+.action-buttons-admin .btn-action-admin.delete:hover { color: #EF4444; /* Red */ }
+
+.self-admin-note {
+    color: #9CA3AF; /* Tailwind gray-400 */
+    font-size: 1rem;
+    padding: 6px;
+    display: inline-block;
+}
+.self-admin-note i {
+    cursor: not-allowed;
+}
+
+
+.no-records-admin {
+    text-align: center;
+    padding: 20px;
+    color: #6B7280;
+    font-style: italic;
+}
+
+/* Message Styling for table actions */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+}
+.message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.message.success-message-admin-table {
+    background-color: #dcfce7; /* Tailwind green-100 */
+    color: #166534; /* Tailwind green-800 */
+    border-color: #86efac; /* Tailwind green-300 */
+}
+.message.success-message-admin-table::before { content: "\f058"; color: #166534; }
+
+.message.error-message-admin-table {
+    background-color: #fee2e2; /* Tailwind red-100 */
+    color: #991b1b; /* Tailwind red-800 */
+    border-color: #fecaca; /* Tailwind red-300 */
+}
+.message.error-message-admin-table::before { content: "\f071"; color: #991b1b; }
+
+.message.warning-message-admin-table {
+    background-color: #FEF3C7; /* Tailwind amber-100 */
+    color: #92400E; /* Tailwind amber-800 */
+    border-color: #FDE68A; /* Tailwind amber-300 */
+}
+.message.warning-message-admin-table::before { content: "\f06a"; color: #92400E; }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-main-header {
+        /* Allow header items to wrap if needed */
+        /* flex-wrap: wrap; */
+        /* gap: 10px; */
+    }
+    .admin-main-header .btn-add-new {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+    .admin-table.users-table th,
+    .admin-table.users-table td {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+    .user-table-photo {
+        width: 35px;
+        height: 35px;
+    }
+}
+@media (max-width: 576px) {
+    /* For very small screens, you might need to hide some columns or make the table scroll more aggressively */
+    .admin-table.users-table th:nth-child(5), /* Hide 'Registered On' for example */
+    .admin-table.users-table td:nth-child(5) {
+        /* display: none; */ /* Uncomment to hide */
+    }
+     .admin-table.users-table th:nth-child(2), /* Hide 'Photo' for example */
+    .admin-table.users-table td:nth-child(2) {
+        /* display: none; */ /* Uncomment to hide */
+    }
+}

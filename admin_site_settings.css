@@ -1,0 +1,135 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.settings-container { /* Re-using .admin-page-container from previous examples if desired */
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 20px;
+}
+
+.admin-page-header { /* Assuming this class is styled globally or from previous examples */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.admin-page-header h1 { margin: 0 0 8px 0; font-size: 2em; }
+.admin-page-header h1 i { margin-right: 10px; }
+.admin-page-header p { margin: 0; font-size: 1.1em; opacity: 0.9; }
+
+.message-feedback {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+}
+.message-feedback.success { background-color: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.message-feedback.error { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
+
+.settings-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.settings-form .form-group {
+    margin-bottom: 22px;
+}
+
+.settings-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="email"],
+.settings-form input[type="tel"],
+.settings-form input[type="url"],
+.settings-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.settings-form input:focus,
+.settings-form textarea:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.settings-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.settings-form .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.settings-form .checkbox-wrapper input[type="checkbox"] {
+    width: auto; /* Override width 100% */
+    margin-top: -1px; /* Minor alignment tweak */
+}
+.settings-form .checkbox-wrapper span {
+    font-weight: normal;
+    color: #495057;
+}
+
+
+.settings-form small {
+    display: block;
+    font-size: 0.875em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.button-primary, .button-secondary {
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+.button-primary i, .button-secondary i { margin-right: 6px; }
+
+.button-primary {
+    background-color: #007bff;
+    color: white;
+}
+.button-primary:hover { background-color: #0056b3; }
+
+.button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.button-secondary:hover { background-color: #545b62; }

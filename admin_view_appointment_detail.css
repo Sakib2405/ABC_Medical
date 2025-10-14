@@ -1,0 +1,219 @@
+/* admin_view_appointment_detail.css */
+/* Styles specific to the admin view appointment detail page */
+
+.admin-main-header .btn-back-admin {
+    background-color: #6B7280;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-main-header .btn-back-admin i {
+    margin-right: 8px;
+}
+.admin-main-header .btn-back-admin:hover {
+    background-color: #4B5563;
+    box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+}
+
+.view-appointment-detail-section {
+    margin-top: 15px;
+}
+
+.appointment-detail-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.detail-card-header {
+    background-color: #4A55A2; /* Primary admin accent */
+    color: #FFFFFF;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.detail-card-header i.fas {
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+.detail-card-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin: 0;
+    color: #FFFFFF;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.status-badge-detail { /* Reusing similar badge style, can be from appointments.css */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    min-width: 85px;
+    border: 1px solid rgba(255,255,255,0.3); /* Subtle border on badge */
+}
+/* Status colors (ensure these match or are defined in admin_manage_appointments.css or a shared file) */
+.status-confirmed { background-color: #20C997; }
+.status-pending { background-color: #FFC107; color: #212529; }
+.status-cancelled { background-color: #DC3545; }
+.status-completed { background-color: #6C757D; }
+.status-rescheduled { background-color: #FD7E14; }
+
+
+.detail-card-body {
+    padding: 25px 30px;
+}
+.detail-card-body h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #343A40;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E9ECEF;
+}
+.detail-card-body h4:first-child {
+    margin-top: 0;
+}
+
+.detail-block {
+    margin-bottom: 15px;
+    padding-left: 10px; /* Indent block content slightly */
+    border-left: 3px solid #EBF4FF; /* Light blue accent for blocks */
+}
+.detail-block p {
+    font-size: 0.95rem;
+    color: #495057;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.detail-block p strong {
+    color: #212529;
+    min-width: 150px; /* Align labels somewhat */
+    display: inline-block;
+}
+.detail-block p a {
+    color: #0D6EFD;
+    text-decoration: none;
+}
+.detail-block p a:hover {
+    text-decoration: underline;
+}
+
+
+.notes-detail {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #F8F9FA;
+    border-radius: 6px;
+    border: 1px solid #E9ECEF;
+}
+.notes-detail h4 {
+    font-size: 1rem;
+    color: #4A55A2;
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.notes-detail p {
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+.doctor-notes-detail {
+    border-left-color: #198754; /* Green for doctor notes */
+}
+.doctor-notes-detail h4 { color: #198754; }
+
+.cancellation-notes-detail {
+    border-left-color: #FFC107; /* Yellow for cancellation */
+}
+.cancellation-notes-detail h4 { color: #B8860B; /* Darker yellow */ }
+
+
+.detail-card-footer {
+    background-color: #F8F9FA;
+    padding: 15px 25px;
+    text-align: right;
+    border-top: 1px solid #E9ECEF;
+}
+
+.btn-action-card-detail {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.btn-action-card-detail i.fas {
+    margin-right: 7px;
+}
+
+.btn-action-card-detail.edit {
+    background-color: #FFC107; color: #212529; border-color: #FFC107;
+}
+.btn-action-card-detail.edit:hover { background-color: #FFCA2C; border-color: #FFCA2C; transform: translateY(-1px); }
+
+.btn-action-card-detail.cancel {
+    background-color: #DC3545; color: #FFFFFF; border-color: #DC3545;
+}
+.btn-action-card-detail.cancel:hover { background-color: #C82333; border-color: #C82333; transform: translateY(-1px); }
+
+.inline-form-detail { /* For action buttons that are forms */
+    display: inline;
+}
+.inline-form-detail button { /* Style form buttons like links */
+    /* Inherit from .btn-action-card-detail where possible */
+}
+
+
+.no-details-admin {
+    text-align: center;
+    padding: 25px;
+    color: #6C757D;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    border: 1px dashed #DEE2E6;
+}
+.message.standalone-message-admin {
+    margin: 0 0 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .detail-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .detail-card-header h3 { font-size: 1.2rem; }
+    .detail-card-body { padding: 20px; }
+    .detail-block p strong { display: block; min-width: auto; margin-bottom: 2px; }
+    .detail-card-footer { text-align: center; }
+    .btn-action-card-detail { display: block; margin: 10px auto; width: calc(100% - 20px); }
+}

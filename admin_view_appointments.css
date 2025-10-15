@@ -1,0 +1,234 @@
+/* admin_view_appointments.css */
+
+.admin-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+.admin-content-area {
+    padding: 20px 25px;
+    flex-grow: 1;
+}
+
+/* Feedback Messages (can be common from admin_dashboard.css) */
+.message-feedback {
+    padding: 12px 15px; margin: 0 0 20px 0; border-radius: 5px;
+    text-align: center; font-size: 0.95em; border: 1px solid transparent;
+}
+.message-feedback.success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.message-feedback.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+
+/* Filter Section */
+.filter-section {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+.filter-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    color: #495057;
+}
+.filter-form select,
+.filter-form input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    min-width: 180px;
+}
+.filter-form .filter-button {
+    padding: 9px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    height: 38px; /* Align with inputs */
+}
+.filter-form .filter-button i { margin-right: 5px; }
+.filter-form .filter-button:hover { background-color: #0056b3; }
+.filter-form .clear-filters { background-color: #6c757d; }
+.filter-form .clear-filters:hover { background-color: #5a6268; }
+
+
+/* List & Detail Sections */
+.appointments-list-section,
+.appointment-detail-view {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.appointments-list-section h2,
+.appointment-detail-view h2 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Appointment Detail View */
+.appointment-detail-view .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.appointment-detail-view .detail-grid p {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+    margin: 0;
+    font-size: 0.95em;
+}
+.appointment-detail-view .detail-grid p strong {
+    display: block;
+    color: #0056b3;
+    margin-bottom: 3px;
+}
+.appointment-detail-view .detail-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+.appointment-detail-view .detail-actions .button-secondary,
+.appointment-detail-view .detail-actions .button-primary {
+    padding: 8px 15px; text-decoration: none; border-radius: 4px; color: white;
+    font-size: 0.9em; margin-right:10px;
+}
+.appointment-detail-view .detail-actions .button-secondary { background-color: #6c757d; }
+.appointment-detail-view .detail-actions .button-secondary:hover { background-color: #5a6268; }
+.appointment-detail-view .detail-actions .button-primary { background-color: #007bff; }
+.appointment-detail-view .detail-actions .button-primary:hover { background-color: #0056b3; }
+.appointment-detail-view .detail-actions i { margin-right: 5px; }
+
+
+/* Table Styles */
+.table-responsive-wrapper { overflow-x: auto; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88em;
+}
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 9px 10px; /* Slightly less padding */
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+td.reason-cell {
+    white-space: normal; /* Allow reason to wrap */
+    max-width: 200px; /* Limit width of reason cell */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+thead th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+}
+tbody tr:nth-child(even) { background-color: #f8fafc; }
+tbody tr:hover { background-color: #eef2f7; }
+
+/* Status Badge (reusable - ensure consistency with other admin CSS) */
+.status-badge {
+    padding: 4px 8px; border-radius: 4px; font-size: 0.85em;
+    font-weight: bold; color: #fff; white-space: nowrap;
+    text-transform: capitalize;
+}
+.status-scheduled, .status-pending-confirmation { background-color: #ffc107; color: #212529; } /* Yellow */
+.status-confirmed { background-color: #28a745; } /* Green */
+.status-completed { background-color: #6c757d; } /* Grey */
+.status-cancelled { background-color: #dc3545; } /* Red */
+.status-no-show { background-color: #343a40; } /* Dark Grey / Black */
+
+.inline-status-form {
+    display: flex;
+    align-items: center;
+}
+.inline-status-form select {
+    padding: 5px 6px;
+    font-size: 0.95em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-grow: 1; /* Allow select to take available space if needed */
+    max-width: 180px; /* Prevent select from becoming too wide */
+}
+.inline-status-form .update-btn-noscript { /* Style for the noscript button */
+    padding: 5px 8px; margin-left: 5px;
+    background-color: #007bff; color: white; border: none;
+    border-radius: 3px; cursor: pointer; font-size: 0.8em;
+}
+
+.actions-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+.action-link {
+    text-decoration: none;
+    margin: 0 4px;
+    font-size: 1.1em;
+    padding: 3px;
+}
+.action-link.view-link { color: #17a2b8; }
+.action-link.edit-link { color: #ffc107; }
+.action-link:hover { opacity: 0.7; }
+
+.no-data-message {
+    text-align: center; padding: 15px; color: #555;
+}
+
+/* Reusing admin_dashboard footer style */
+.dashboard-footer-main {
+    text-align: center; margin-top: 30px; padding-top: 15px;
+    border-top: 1px solid #ddd; font-size: 0.9em; color: #6c757d;
+}
+.dashboard-footer-main a { color: #007bff; text-decoration: none; }
+.dashboard-footer-main a:hover { text-decoration: underline; }
+
+
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch; /* Make filter elements full width */
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-form select, .filter-form input[type="date"], .filter-form .filter-button {
+        width: 100%;
+        min-width: 0; /* Reset min-width */
+        margin-top: 5px;
+    }
+    .filter-form .filter-button { justify-content: center; }
+
+    .admin-page-container .dashboard-header-main {
+        flex-direction: column; padding: 15px;
+    }
+    .admin-page-container .dashboard-header-main .header-content {
+        margin-bottom: 10px; text-align: center;
+    }
+    .admin-page-container .dashboard-header-main .admin-nav { margin-top: 10px; }
+    .admin-page-container .dashboard-header-main .admin-nav a { margin: 0 10px; }
+}

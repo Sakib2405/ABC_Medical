@@ -1,0 +1,199 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Lighter, modern background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px; /* Wider for more columns */
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #007bff; /* Consistent primary blue */
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+h1 i {
+    margin-right: 10px;
+}
+
+.table-responsive-wrapper {
+    overflow-x: auto; /* Allows horizontal scrolling on small screens if table is too wide */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid #dee2e6; /* Softer border color */
+    padding: 12px 15px; /* Adjusted padding */
+    text-align: left;
+    vertical-align: middle; /* Better for single line content */
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+thead th {
+    font-weight: 600; /* Semibold for header */
+    white-space: nowrap; /* Prevent header text wrapping */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Very light alternating row */
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+    /* cursor: pointer; */ /* Add if rows become clickable */
+}
+
+/* Status Badge Styling */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+.status-scheduled { background-color: #17a2b8; /* Teal */ }
+.status-confirmed { background-color: #28a745; /* Green */ }
+.status-completed { background-color: #6c757d; /* Grey */ }
+.status-cancelled { background-color: #dc3545; /* Red */ }
+.status-pending-prescription { background-color: #ffc107; color: #333; /* Yellow */ }
+/* Add more status styles as needed */
+
+
+.message { /* Common styling for messages */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid transparent;
+}
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.info-message {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.page-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.button-link, .button-link-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    margin: 5px;
+}
+.button-link i, .button-link-secondary i {
+    margin-right: 8px;
+}
+.button-link {
+    background-color: #007bff;
+}
+.button-link:hover {
+    background-color: #0056b3;
+}
+.button-link-secondary {
+    background-color: #6c757d;
+}
+.button-link-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Responsive table for smaller screens */
+@media screen and (max-width: 992px) { /* Adjust breakpoint as needed */
+    .table-responsive-wrapper {
+        /* overflow-x: auto; is already set, which is the primary responsive behavior for wide tables */
+    }
+    /* Optional: Stacked table view for very small screens if horizontal scroll is not desired */
+}
+
+@media screen and (max-width: 768px) {
+    /* For very small screens, you might want to switch to a stacked display */
+    /* This example keeps horizontal scroll but you can adapt the previous stacked CSS */
+    thead {
+        /* display: none; */ /* Can hide if using data-label approach fully */
+    }
+    /* If you prefer the stacked view from previous CSS, uncomment and adapt: */
+    /*
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px dashed #eee;
+        position: relative;
+        padding-left: 45%; // Adjust based on longest label
+        text-align: right;
+        white-space: normal;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+
+    td:before {
+        content: attr(data-label); // Use data-label attribute from td
+        position: absolute;
+        left: 10px;
+        width: calc(45% - 20px); // Adjust width
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: #333;
+    }
+    */
+}

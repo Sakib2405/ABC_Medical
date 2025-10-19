@@ -1,0 +1,204 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f8ff; /* Light blue-ish background */
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.pharmacy-container {
+    max-width: 1300px; /* Wider for layout */
+    margin: 0 auto;
+}
+
+.pharmacy-header {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: #007bff; /* Primary theme color */
+    color: white;
+    margin-bottom: 20px;
+}
+.pharmacy-header h1 { margin: 0 0 8px 0; font-size: 2.2em; }
+.pharmacy-header h1 i { margin-right: 10px; }
+.pharmacy-header p { margin: 0; font-size: 1.1em; opacity: 0.9; }
+
+.message-feedback {
+    padding: 12px 18px;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+    text-align: center;
+}
+.message-feedback.success { background-color: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.message-feedback.error { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
+.message-feedback.info { background-color: #cce5ff; color: #004085; border-color: #b8daff; }
+
+
+.pharmacy-prescription-notice {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin: 0 20px 25px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.pharmacy-prescription-notice i { margin-right: 8px; }
+
+.pharmacy-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow sidebar to wrap on smaller screens */
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.medicine-list-section {
+    flex: 3; /* Takes more space */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.medicine-list-section h2 {
+    font-size: 1.7em; color: #343a40; margin-top: 0; margin-bottom: 20px;
+    padding-bottom: 10px; border-bottom: 1px solid #e9ecef;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.search-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.search-form button:hover { background-color: #0056b3; }
+
+
+.medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive cards */
+    gap: 20px;
+}
+
+.medicine-card {
+    background-color: #fdfdfd;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+}
+.medicine-card:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+
+.medicine-card h3 { font-size: 1.2em; margin: 0 0 5px 0; color: #0056b3;}
+.rx-tag {
+    background-color: #dc3545; color: white; font-size: 0.75em; padding: 2px 6px;
+    border-radius: 3px; display: inline-block; margin-bottom: 5px; font-weight: bold;
+}
+.rx-tag i { margin-right: 3px; }
+.otc-tag {
+    background-color: #28a745; color: white; font-size: 0.75em; padding: 2px 6px;
+    border-radius: 3px; display: inline-block; margin-bottom: 5px; font-weight: bold;
+}
+.medicine-card .generic-name { font-size: 0.9em; color: #555; margin-bottom: 3px; }
+.medicine-card .manufacturer { font-size: 0.85em; color: #777; margin-bottom: 5px; }
+.medicine-card .strength-form { font-size: 0.9em; color: #444; margin-bottom: 8px; }
+.medicine-card .price { font-size: 1.1em; font-weight: bold; color: #28a745; margin-bottom: 8px; }
+.medicine-card .stock { font-size: 0.85em; color: #666; margin-bottom: 10px; }
+
+.add-to-cart-form { margin-top: auto; /* Pushes button to bottom */ }
+.button-add-to-cart {
+    width: 100%; padding: 9px 15px; background-color: #007bff; color: white;
+    border: none; border-radius: 4px; cursor: pointer; font-size: 0.95em; transition: background-color 0.2s;
+}
+.button-add-to-cart:hover { background-color: #0056b3; }
+.button-add-to-cart i { margin-right: 5px; }
+.button-disabled {
+    width: 100%; padding: 9px 15px; background-color: #adb5bd; color: #6c757d;
+    border: none; border-radius: 4px; cursor: not-allowed; font-size: 0.95em;
+}
+
+.no-medicines { padding: 20px; text-align: center; color: #6c757d; }
+
+/* Cart Section */
+.cart-section {
+    flex: 1; /* Takes less space */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    align-self: flex-start; /* Keep it at the top when main content is long */
+}
+.cart-section h2 {
+    font-size: 1.5em; color: #343a40; margin-top: 0; margin-bottom: 15px;
+    padding-bottom: 10px; border-bottom: 1px solid #e9ecef;
+}
+.cart-section h2 i { margin-right: 8px; }
+
+.cart-items-list { list-style: none; padding: 0; margin: 0 0 15px 0; }
+.cart-items-list li {
+    padding: 10px 0; border-bottom: 1px solid #f1f1f1;
+    display: flex; flex-direction: column; gap: 5px;
+}
+.cart-items-list li:last-child { border-bottom: none; }
+
+.cart-item-info { font-size: 0.95em; }
+.cart-item-info strong { color: #0056b3; }
+.rx-small-tag {
+    background-color: #dc3545; color: white; font-size: 0.7em; padding: 1px 4px;
+    border-radius: 2px; margin-left: 5px; font-weight: bold; vertical-align: middle;
+}
+
+.cart-update-form { display: flex; align-items: center; gap: 8px; font-size: 0.9em; }
+.cart-quantity-input { width: 50px; padding: 4px 6px; text-align: center; border: 1px solid #ccc; border-radius: 3px; }
+.button-update-qty, .button-remove-item {
+    background: none; border: none; cursor: pointer; padding: 3px; color: #007bff;
+}
+.button-update-qty:hover { color: #0056b3; }
+.button-remove-item { color: #dc3545; }
+.button-remove-item:hover { color: #a71d2a; }
+
+.cart-item-total { font-size: 0.9em; text-align: right; color: #555; font-weight: bold; }
+
+.cart-summary { margin-top: 20px; padding-top: 15px; border-top: 2px solid #007bff; }
+.cart-summary p { margin: 0 0 10px 0; font-size: 1.1em; }
+.cart-summary strong { font-weight: bold; }
+
+.empty-cart-button { font-size: 0.9em; padding: 6px 12px; margin-right: 10px; background-color: #6c757d; }
+.empty-cart-button:hover { background-color: #5a6268; }
+.checkout-button { font-size: 1.1em; padding: 10px 20px; background-color: #28a745;}
+.checkout-button:hover { background-color: #218838;}
+.checkout-button i { margin-left: 8px; }
+.checkout-note { font-size: 0.85em; color: #6c757d; margin-top: 10px; }
+
+.empty-cart-message { text-align: center; padding: 20px; color: #6c757d; }
+
+.pharmacy-footer {
+    text-align: center; padding: 20px; background-color: #343a40; color: #f8f9fa;
+    font-size: 0.9em; margin-top: 30px;
+}
+.pharmacy-footer p { margin: 5px 0; }
+
+@media (max-width: 768px) {
+    .pharmacy-layout { flex-direction: column; }
+    .cart-section { margin-top: 20px; }
+}

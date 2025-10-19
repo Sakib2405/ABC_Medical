@@ -1,0 +1,235 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fefefe; /* Light, almost white background */
+    color: #333;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.blood-donation-container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.07);
+}
+
+.page-header.blood-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #dc3545; /* Red for blood donation theme */
+    color: white;
+    border-bottom: 5px solid #c82333; /* Darker red accent */
+}
+.page-header.blood-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.6em;
+    font-weight: 700;
+}
+.page-header.blood-header h1 i {
+    margin-right: 15px;
+    animation: pulseHeart 1.5s infinite; /* Simple animation for the heart */
+}
+.page-header.blood-header p {
+    margin: 0;
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+@keyframes pulseHeart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.content-wrapper {
+    padding: 30px 25px;
+}
+
+.info-section {
+    margin-bottom: 45px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.info-section:last-of-type { /* Last direct child section before final call to action */
+    border-bottom: none;
+}
+
+
+.info-section h2 {
+    font-size: 1.9em;
+    color: #b22222; /* Darker red for section titles */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.info-section h2 i {
+    margin-right: 12px;
+    font-size: 0.9em;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+    color: #404040;
+}
+.info-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+.info-section ul li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+.info-section ul li::before {
+    content: "\f004"; /* FontAwesome heart icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; /* Solid icons */
+    color: #dc3545; /* Red heart */
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 1.1em;
+}
+
+.disclaimer {
+    font-size: 0.9em;
+    color: #555;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffeeba;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* Process Steps */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.step {
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+.step-icon i {
+    font-size: 2.5em;
+    color: #dc3545;
+    margin-bottom: 10px;
+    display: block;
+}
+.step h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+.step p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Where to Donate */
+.organizations-list li {
+    background-color: #fdf6f6;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 3px solid #e57373;
+}
+.organizations-list li::before {
+    display: none; /* Remove default heart icon for this list */
+}
+.organizations-list strong {
+    display: block;
+    font-size: 1.1em;
+    color: #c62828;
+    margin-bottom: 5px;
+}
+.organizations-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.organizations-list a:hover {
+    text-decoration: underline;
+}
+.organizations-list .org-notes {
+    font-size: 0.85em;
+    color: #444;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #28a745; /* Green for positive action */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: background-color 0.2s ease;
+}
+.cta-button:hover {
+    background-color: #218838;
+}
+.cta-button i {
+    margin-left: 8px;
+}
+
+.final-call-to-action {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #ffebee; /* Light red background */
+    border: 1px solid #ffcdd2;
+    border-radius: 6px;
+}
+.final-call-to-action p {
+    font-size: 1.1em;
+    color: #c62828;
+    margin-bottom: 10px;
+}
+.final-call-to-action strong {
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button-secondary { /* For Back to Homepage link */
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+.button-secondary:hover { background-color: #545b62; }
+.button-secondary i { margin-right: 5px; }
+
+.page-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9em;
+}
+.page-footer p { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header.blood-header h1 { font-size: 2em; }
+    .page-header.blood-header p { font-size: 1em; }
+    .content-wrapper { padding: 20px 15px; }
+    .info-section h2 { font-size: 1.6em; }
+}

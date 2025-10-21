@@ -1,0 +1,273 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f4f8; /* Light blue-grey background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top if content is short */
+    min-height: 100vh;
+}
+
+.checkout-container-appointment {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 30px; /* Space from top */
+    margin-bottom: 30px;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border-top: 5px solid #007bff; /* Accent color */
+}
+
+.checkout-container-appointment h1 {
+    color: #007bff;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+.checkout-container-appointment h1 i {
+    margin-right: 10px;
+}
+
+.appointment-summary {
+    background-color: #e9f5ff; /* Light blue background for summary */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid #007bff;
+}
+
+.appointment-summary h2 {
+    font-size: 1.4em;
+    color: #0056b3; /* Darker blue for heading */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.appointment-summary p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.appointment-summary p strong {
+    min-width: 130px; /* Helps align text */
+    display: inline-block;
+    color: #004085; /* Even darker blue for labels */
+}
+
+.checkout-form-appointment h2 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 0; 
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-form-appointment .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout-form-appointment label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600; 
+    color: #495057;
+    font-size: 0.95em;
+}
+.checkout-form-appointment label .required {
+    color: #dc3545; /* Red asterisk */
+    margin-left: 2px;
+}
+
+.checkout-form-appointment input[type="text"],
+.checkout-form-appointment input[type="tel"],
+.checkout-form-appointment input[type="email"],
+.checkout-form-appointment textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.checkout-form-appointment input[type="text"]:focus,
+.checkout-form-appointment input[type="tel"]:focus,
+.checkout-form-appointment input[type="email"]:focus,
+.checkout-form-appointment textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.checkout-form-appointment textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.btn-confirm-appointment {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #28a745; /* Success green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: 0.5px;
+}
+.btn-confirm-appointment i {
+    margin-right: 8px;
+}
+
+.btn-confirm-appointment:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.form-note {
+    font-size: 0.85em;
+    color: #6c757d; 
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Message styling */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 1px solid transparent;
+    text-align: left; 
+}
+
+.message.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.message.error-message a { color: #721c24; font-weight:bold; }
+
+
+.message.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+    text-align: center; 
+}
+.message.success-message strong {
+    font-size: 1.1em;
+}
+
+.after-success-actions {
+    text-align: center;
+    margin-top: 20px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+}
+.after-success-actions .button-link,
+.after-success-actions .button-link-secondary {
+    margin-top: 0; 
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    margin-top: 10px; /* Default top margin */
+}
+.button-link i {
+    margin-right: 5px;
+}
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+.button-link-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em; 
+    transition: background-color 0.2s ease;
+    margin-top: 10px; 
+}
+.button-link-secondary i {
+    margin-right: 5px;
+}
+.button-link-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+}
+
+.message.error-message p { /* For the paragraph holding action links within error message */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px; /* Ensure spacing from error text */
+}
+
+
+.checkout-footer-appointment {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+.checkout-footer-appointment .footer-link {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.checkout-footer-appointment .footer-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.checkout-footer-appointment .footer-link i {
+    margin-right: 4px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .checkout-container-appointment {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 20px;
+    }
+    .checkout-container-appointment h1 {
+        font-size: 1.6em;
+    }
+    .checkout-form-appointment input[type="text"],
+    .checkout-form-appointment input[type="tel"],
+    .checkout-form-appointment input[type="email"],
+    .checkout-form-appointment textarea {
+        padding: 10px;
+    }
+    .btn-confirm-appointment {
+        font-size: 1.05em;
+    }
+}

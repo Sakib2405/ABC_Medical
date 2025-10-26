@@ -1,0 +1,209 @@
+/* General Body Styles (can inherit from style.css if linked first) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.availability-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.availability-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff; /* Primary blue */
+}
+
+.availability-header h1 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin: 0;
+}
+.availability-header h1 i {
+    margin-right: 10px;
+}
+
+/* Message Styles (can be common) */
+.message {
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+}
+.message.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+.message.info { background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+
+
+.doctor-info-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-radius: 6px;
+}
+.doctor-info-section h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #0056b3;
+}
+.doctor-info-section p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.date-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.nav-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+.nav-button:hover {
+    background-color: #0056b3;
+}
+.nav-button.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none; /* Make it unclickable */
+}
+.current-date-display {
+    font-size: 1.1em;
+    color: #333;
+}
+.current-date-display strong {
+    color: #007bff;
+}
+
+.date-selector-simple {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+.date-selector-simple label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+.date-selector-simple input[type="date"] {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+}
+.date-selector-simple button {
+    padding: 7px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.date-selector-simple button:hover {
+    background-color: #218838;
+}
+
+
+.time-slots-section {
+    margin-top: 20px;
+}
+.time-slots-section h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.slot-button {
+    display: block;
+    padding: 12px 10px;
+    background-color: #28a745; /* Green for available */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.slot-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+.slot-button:active {
+    transform: translateY(0);
+}
+
+.no-slots-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.availability-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+.availability-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+.availability-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .availability-header h1 {
+        font-size: 1.5em;
+    }
+    .date-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .slots-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .slot-button {
+        font-size: 0.9em;
+        padding: 10px 8px;
+    }
+}

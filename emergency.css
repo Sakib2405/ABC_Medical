@@ -1,0 +1,229 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 1200px; /* Cards will be constrained by this width */
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.sub-heading {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* Feedback Messages */
+.message-feedback {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.05em;
+    border: 1px solid transparent;
+}
+.message-feedback.success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.message-feedback.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+.message-feedback.info { background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+
+
+.doctors-grid {
+    display: flex; /* Using flex for a single column layout */
+    flex-direction: column;
+    gap: 25px; /* Space between each doctor card */
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row; /* Image and content-wrapper side-by-side */
+    transition: box-shadow 0.2s ease-in-out; /* Simpler transition for this layout */
+    min-height: 200px; /* Minimum height for the card */
+}
+
+.doctor-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-image-container {
+    width: 200px; /* Fixed width for the image area, adjust as needed */
+    flex-shrink: 0; /* Prevent image container from shrinking */
+    background-color: #e9ecef;
+    position: relative; /* For absolute positioning of elements inside if needed */
+}
+
+.doctor-image-container img {
+    width: 100%;
+    height: 100%; /* Image takes full height of its container */
+    object-fit: cover; /* Crop image to fit, maintaining aspect ratio */
+    display: block;
+    min-height: 200px; /* Ensure image area has min height */
+}
+
+.doctor-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack info and actions vertically */
+    flex-grow: 1; /* Allow this wrapper to take remaining horizontal space */
+    padding: 20px; /* Padding for the content area */
+    overflow: hidden; 
+}
+
+.doctor-info {
+    padding: 0; 
+    flex-grow: 1; /* Pushes doctor-actions to the bottom of the wrapper */
+}
+
+.doctor-info h2 {
+    font-size: 1.6em; /* Larger font for wider card */
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.doctor-info .specialization {
+    font-size: 1.15em;
+    color: #28a745;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.doctor-info p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #495057;
+}
+
+.doctor-info p strong {
+    color: #343a40;
+}
+
+.doctor-info .bio {
+    font-size: 0.95em;
+    color: #6c757d;
+    margin-bottom: 12px;
+    /* max-height: 6em; /* Optional: limit height and allow scroll or just let it flow */
+    /* overflow-y: auto; */
+}
+
+.doctor-info .contact-info-short {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+.doctor-info .contact-info-short i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.doctor-actions {
+    padding-top: 15px; 
+    margin-top: auto; /* Pushes button to bottom if info content is short */
+    text-align: left; /* Align button to the left, or 'right' / 'center' */
+}
+
+.btn-book-appointment {
+    display: inline-block; /* Button takes its content width */
+    width: auto; 
+    padding: 12px 25px; /* Slightly larger button */
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.btn-book-appointment i {
+    margin-right: 8px;
+}
+
+.btn-book-appointment:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.no-doctors-message {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for the single-column layout */
+@media (max-width: 768px) { /* Tablet */
+    .doctor-card {
+        flex-direction: column; /* Stack image on top of text */
+        min-height: auto; /* Reset min-height */
+    }
+    .doctor-image-container {
+        width: 100%; /* Image takes full width of card */
+        height: 220px; /* Fixed height for image when stacked */
+    }
+    .doctor-image-container img {
+        min-height: 0; /* Reset min-height for image if container has fixed height */
+    }
+    .doctor-content-wrapper {
+        padding: 15px; /* Adjust padding if needed */
+    }
+    .doctor-info h2 {
+        font-size: 1.4em;
+    }
+    .doctor-actions {
+        text-align: center; /* Center button on tablet when stacked */
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .page-container {
+        width: 95%;
+        padding: 10px;
+    }
+    .doctor-image-container {
+        height: 200px; /* Slightly smaller image height for mobile */
+    }
+    .doctor-content-wrapper {
+        padding: 15px;
+    }
+     .doctor-info h2 {
+        font-size: 1.3em;
+    }
+    .doctor-info .specialization {
+        font-size: 1.05em;
+    }
+    .doctor-info p {
+        font-size: 0.95em;
+    }
+     .btn-book-appointment {
+        width: 100%; /* Full-width button for easier tapping */
+        padding: 12px 20px;
+    }
+}

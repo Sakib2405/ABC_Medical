@@ -1,0 +1,296 @@
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #4A5568; /* Default text color */
+    display: flex; /* Used by .login-page-wrapper-centered to center content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-page-wrapper-centered {
+    width: 100%;
+    min-height: 100vh; /* Ensure wrapper takes full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Padding around the card */
+    /* Colorful animated gradient background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-form-panel-centered {
+    width: 100%;
+    max-width: 480px; /* Max width of the login form card */
+    background-color: #FFFFFF;
+    padding: 40px 50px; /* More padding for a spacious feel */
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Softer, more pronounced shadow */
+    animation: fadeInFormPanel 0.8s ease-out forwards;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(15px); /* Start slightly lower for animation */
+}
+
+@keyframes fadeInFormPanel {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-prof-centered {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-prof-centered a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #4A55A2; /* Primary accent color for logo */
+}
+
+.logo-prof-centered .fa-clinic-medical {
+    font-size: 2.8rem; /* Larger logo icon */
+    margin-right: 12px;
+    color: #4A55A2;
+}
+
+.logo-prof-centered h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem; /* Larger logo text */
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-form-panel-centered h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem; /* Slightly larger form title */
+    font-weight: 600;
+    color: #2D3748;
+    margin-bottom: 35px; /* More space below title */
+    text-align: center;
+}
+
+.form-group-prof {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-group-prof label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4A5568;
+    margin-bottom: 8px;
+}
+.required-star {
+    color: #E53E3E;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #A0AEC0;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.form-group-prof input[type="email"],
+.form-group-prof input[type="password"] {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #CBD5E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2D3748;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group-prof input[type="email"]:focus,
+.form-group-prof input[type="password"]:focus {
+    border-color: #4A55A2;
+    box-shadow: 0 0 0 3px rgba(74, 85, 162, 0.2);
+    outline: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #A0AEC0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.toggle-password:hover {
+    color: #4A55A2;
+}
+
+
+.form-group-prof input.input-error-prof {
+    border-color: #E53E3E;
+}
+.error-text-prof {
+    display: block;
+    color: #E53E3E;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    min-height: 1em;
+}
+
+.form-options-prof {
+    display: flex;
+    justify-content: flex-end; /* Align "Forgot password?" to the right */
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+    min-height: 20px; /* Ensure consistent height even if "Remember Me" is gone */
+}
+
+/* Styles for .remember-me-prof are removed as the element is gone */
+
+.forgot-password-link-prof {
+    color: #4A55A2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.forgot-password-link-prof:hover {
+    color: #323b6b;
+    text-decoration: underline;
+}
+
+.btn-login-prof {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #4A55A2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-login-prof:hover {
+    background-color: #3c4687;
+    box-shadow: 0 7px 14px rgba(74, 85, 162, 0.2);
+    transform: translateY(-2px);
+}
+.btn-login-prof:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(74, 85, 162, 0.15);
+}
+
+.form-footer-links-prof {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-footer-links-prof p {
+    margin-bottom: 10px;
+    color: #718096;
+}
+
+.form-footer-links-prof a {
+    color: #4A55A2;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-footer-links-prof a:hover {
+    color: #323b6b;
+    text-decoration: underline;
+}
+.back-home-prof i {
+    margin-right: 4px;
+}
+
+/* Message Styling */
+.message {
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+}
+.message ul { list-style-type: none; padding-left: 0; margin: 0; }
+.message ul li { margin-bottom: 5px; }
+
+.success-message-prof {
+    background-color: #C6F6D5;
+    color: #2F855A;
+    border-color: #9AE6B4;
+}
+.success-message-prof a { color: #2F855A; font-weight: bold; }
+
+.error-message-prof {
+    background-color: #FED7D7;
+    color: #C53030;
+    border-color: #FEB2B2;
+}
+.error-message-prof a { color: #C53030; font-weight: bold; }
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-form-panel-centered {
+        padding: 30px 30px; /* Adjust padding for smaller screens */
+        margin: 0 15px; /* Add some margin if screen is very narrow */
+    }
+    .logo-prof-centered .fa-clinic-medical { font-size: 2.5rem; }
+    .logo-prof-centered h1 { font-size: 1.8rem; }
+    .login-form-panel-centered h3 { font-size: 1.6rem; }
+}
+
+@media (max-width: 450px) {
+    .login-form-panel-centered {
+        padding: 25px 20px;
+    }
+    .logo-prof-centered .fa-clinic-medical { font-size: 2.2rem; }
+    .logo-prof-centered h1 { font-size: 1.6rem; }
+    .login-form-panel-centered h3 { font-size: 1.5rem; }
+
+    .form-group-prof input[type="email"],
+    .form-group-prof input[type="password"] {
+        padding: 10px 10px 10px 35px;
+        font-size: 0.95rem;
+    }
+    .btn-login-prof {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    .form-options-prof {
+        /* Keep it aligned to the right or adjust as needed */
+         justify-content: flex-end;
+    }
+}

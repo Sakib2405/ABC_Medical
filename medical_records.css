@@ -1,0 +1,262 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.my-records-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.my-records-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+}
+.my-records-header h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin: 0 0 8px 0;
+}
+.my-records-header h1 i { margin-right: 12px; }
+.my-records-header p { font-size: 1em; color: #555; margin-top: 0; }
+
+.important-notice {
+    padding: 12px 18px; margin: 15px 0 20px 0; border-radius: 6px;
+    font-size: 0.9em; border: 1px solid transparent; line-height: 1.5;
+}
+.user-privacy-notice {
+    background-color: #e9f5ff; color: #004085; border-color: #b8daff;
+}
+.user-privacy-notice i { margin-right: 8px; }
+
+.message.error-message.login-prompt {
+    background-color: #fff3cd; color: #856404; border-color: #ffeeba;
+    padding: 20px; text-align: center; margin-bottom: 20px;
+}
+.login-prompt p { margin-bottom: 10px; }
+.login-prompt code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px;}
+.button-link-secondary {
+    display: inline-block; padding: 8px 15px; background-color: #6c757d; color: white;
+    text-decoration: none; border-radius: 4px; font-size: 0.9em;
+}
+.button-link-secondary:hover { background-color: #545b62; }
+.button-link-secondary i { margin-right: 5px; }
+
+
+.records-overview {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+.welcome-user {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.welcome-user strong { color: #007bff; }
+
+/* Tabs */
+.record-tabs {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.tab-link {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    transition: 0.3s;
+    font-size: 1.05em;
+    font-weight: 500;
+    color: #555;
+    border-bottom: 3px solid transparent; /* For active indicator */
+}
+.tab-link:hover { background-color: #f1f1f1; }
+.tab-link.active {
+    /* background-color: #ddd; */
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+.tab-link i { margin-right: 8px; }
+
+.tab-content {
+    display: none;
+    padding: 10px 0;
+    /* border-top: none; */
+}
+.tab-content h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.tab-content h2 i { margin-right: 10px; color: #007bff;}
+
+
+/* Table Styling (common for appointments) */
+.table-responsive-wrapper { overflow-x: auto; margin-bottom: 20px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+thead th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+}
+tbody tr:nth-child(even) { background-color: #f8fafc; }
+tbody tr:hover { background-color: #eef2f7; }
+
+/* Pharmacy Order Cards */
+.order-card {
+    background-color: #fdfdff;
+    border: 1px solid #dbe4f0;
+    border-left: 4px solid #28a745; /* Pharmacy theme accent */
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+}
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+.order-header h3 {
+    margin: 0;
+    font-size: 1.25em;
+    color: #28a745;
+}
+.order-header .order-date {
+    font-size: 0.85em;
+    color: #666;
+    font-weight: normal;
+    margin-left: 10px;
+}
+.view-order-details-link {
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.view-order-details-link:hover { text-decoration: underline; }
+.view-order-details-link i { margin-left: 4px; }
+
+
+.order-summary-details p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #454545;
+}
+.order-summary-details strong { color: #2c3e50; }
+
+.prescription-link-inline {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.prescription-link-inline:hover { text-decoration: underline; }
+.prescription-link-inline i { margin-right: 4px; }
+
+.order-items-summary-list {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+.order-items-summary-list strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+.order-items-summary-list ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    color: #555;
+}
+.order-items-summary-list li {
+    margin-bottom: 3px;
+}
+
+
+/* Status Badge Styling (reusable) */
+.status-badge {
+    padding: 3px 8px; border-radius: 10px; font-size: 0.8em;
+    font-weight: 500; color: #fff; white-space: nowrap; text-transform: capitalize;
+}
+/* Appointment Statuses */
+.status-scheduled { background-color: #17a2b8; }
+.status-confirmed { background-color: #28a745; }
+.status-completed { background-color: #6c757d; }
+.status-cancelled { background-color: #dc3545; }
+/* Pharmacy Order Statuses */
+.status-order-pending-confirmation { background-color: #17a2b8; }
+.status-order-pending-prescription { background-color: #ffc107; color: #212529; }
+.status-order-processing { background-color: #007bff;}
+.status-order-shipped { background-color: #fd7e14; }
+.status-order-delivered { background-color: #28a745; }
+.status-order-on-hold { background-color: #ffc107; color: #212529;}
+/* Prescription Statuses for Orders */
+.status-rx-pending-verification { background-color: #ffc107; color: #212529; }
+.status-rx-verified { background-color: #28a745; }
+.status-rx-rejected { background-color: #dc3545; }
+.status-rx-not-required { background-color: #6c757d; }
+.status-rx-contact-customer { background-color: #17a2b8; }
+.status-rx-unknown { background-color: #adb5bd; }
+
+
+.no-records {
+    text-align: center; font-size: 1.05em; color: #555;
+    padding: 20px; background-color: #f8f9fa;
+    border: 1px solid #e9ecef; border-radius: 5px; margin-top: 20px;
+}
+
+.my-records-footer {
+    text-align: center; margin-top: 30px; padding-top: 15px;
+    border-top: 1px solid #ddd; font-size: 0.9em; color: #6c757d;
+}
+.my-records-footer a { color: #007bff; text-decoration: none; }
+.my-records-footer a:hover { text-decoration: underline; }
+.my-records-footer i { margin-right: 4px; }
+
+
+@media (max-width: 768px) {
+    .my-records-header h1 { font-size: 1.7em; }
+    .record-tabs {
+        display: flex;
+        flex-direction: column;
+    }
+    .tab-link {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #eee; /* Change active indicator for stacked tabs */
+    }
+    .tab-link.active {
+        background-color: #e9ecef;
+        border-left: 3px solid #007bff;
+        border-bottom: 1px solid #eee;
+    }
+}

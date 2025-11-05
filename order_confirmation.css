@@ -1,0 +1,258 @@
+/* General Body Styles (can inherit from style.css if linked first) */
+body {
+    font-family: Arial, sans-serif; /* Fallback font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.confirmation-page-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #28a745; /* Green for success */
+}
+
+.confirmation-header h1 {
+    color: #28a745;
+    font-size: 2em;
+    margin: 0;
+}
+.confirmation-header h1 i {
+    margin-right: 10px;
+}
+
+/* Feedback Messages (can reuse from buy_medicine.css or style.css) */
+.message-feedback {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.05em;
+    border: 1px solid transparent;
+}
+.message-feedback.success { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+.message-feedback.error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+.message-feedback.info { background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; }
+
+.button-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+
+.order-details-wrapper {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.order-details-wrapper section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+}
+.order-details-wrapper section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.order-details-wrapper h2 {
+    font-size: 1.6em;
+    color: #007bff; /* Primary blue */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.order-details-wrapper h3 {
+    font-size: 1.3em;
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.order-details-wrapper h3 i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.order-main-info p,
+.customer-shipping-info p,
+.prescription-info p,
+.order-notes p {
+    margin: 5px 0 10px 0;
+    color: #555;
+}
+.order-main-info p strong,
+.customer-shipping-info p strong {
+    color: #333;
+    min-width: 120px; /* Align labels a bit */
+    display: inline-block;
+}
+
+.status-pending-prescription { color: #ffc107; font-weight: bold; /* Yellow */ }
+.status-pending-confirmation { color: #17a2b8; font-weight: bold; /* Teal */ }
+.status-processing { color: #007bff; font-weight: bold; /* Blue */ }
+.status-shipped { color: #fd7e14; font-weight: bold; /* Orange */ }
+.status-delivered { color: #28a745; font-weight: bold; /* Green */ }
+.status-cancelled { color: #dc3545; font-weight: bold; /* Red */ }
+
+
+.customer-shipping-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.customer-shipping-info .info-column {
+    flex: 1;
+    min-width: 250px;
+}
+.customer-shipping-info address {
+    font-style: normal;
+    line-height: 1.7;
+}
+
+.prescription-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.prescription-info a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-flex; /* For better alignment with image */
+    align-items: center;
+}
+.prescription-info a:hover {
+    text-decoration: underline;
+}
+
+
+.ordered-items-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.ordered-items-summary th,
+.ordered-items-summary td {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+.ordered-items-summary thead th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+.ordered-items-summary tbody td {
+    font-size: 0.9em;
+    color: #555;
+}
+.ordered-items-summary tfoot td {
+    font-weight: bold;
+}
+.ordered-items-summary .summary-label {
+    text-align: right;
+    color: #333;
+}
+.ordered-items-summary .summary-value {
+    text-align: right;
+    color: #007bff;
+}
+.ordered-items-summary .grand-total-label {
+    font-size: 1.1em;
+    color: #28a745;
+}
+.ordered-items-summary .grand-total-value {
+    font-size: 1.1em;
+    color: #28a745;
+}
+.ordered-items-summary .grand-total-value small {
+    font-weight: normal;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.confirmation-actions {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.confirmation-actions .button-action {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.2s ease;
+}
+.confirmation-actions .button-action i {
+    margin-right: 8px;
+}
+.confirmation-actions .button-action:hover {
+    opacity: 0.85;
+}
+.confirmation-actions .print-button {
+    background-color: #6c757d; /* Grey */
+}
+.confirmation-actions .continue-shopping-button {
+    background-color: #007bff; /* Blue */
+}
+
+
+.confirmation-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .confirmation-header h1 {
+        font-size: 1.7em;
+    }
+    .order-details-wrapper {
+        padding: 15px;
+    }
+    .customer-shipping-info {
+        flex-direction: column;
+    }
+    .ordered-items-summary th,
+    .ordered-items-summary td {
+        padding: 8px 5px;
+        font-size: 0.85em; /* Smaller font for table on mobile */
+    }
+     .confirmation-actions .button-action {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+}

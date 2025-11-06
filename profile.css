@@ -1,0 +1,216 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.profile-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0;
+}
+
+.profile-page-header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+.profile-page-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2em;
+}
+.profile-page-header p {
+    margin:0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.feedback-message {
+    padding: 15px;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+}
+.feedback-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.feedback-message.error ul {
+    margin: 5px 0 0 20px; padding: 0;
+}
+.feedback-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.profile-layout {
+    display: flex;
+    gap: 25px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.profile-sidebar {
+    flex: 0 0 280px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.profile-picture-container {
+    margin-bottom: 20px;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+.profile-sidebar .user-id,
+.profile-sidebar .user-role {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+    word-break: break-all; /* In case ID is long */
+}
+
+.profile-meta p {
+    font-size: 0.9em;
+    color: #495057;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.profile-meta strong {
+    color: #343a40;
+}
+
+.profile-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.button-action {
+    display: block;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95em;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+.button-action:hover {
+    background-color: #545b62;
+}
+
+.profile-main-content {
+    flex-grow: 1;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+}
+.profile-section:last-child {
+    margin-bottom: 0;
+}
+.profile-section h2 {
+    font-size: 1.6em;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.profile-form .form-group {
+    margin-bottom: 18px;
+}
+.profile-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #495057;
+}
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form input[type="date"],
+.profile-form input[type="url"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.profile-form input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    color: #6c757d;
+}
+.profile-form small {
+    display: block;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 4px;
+}
+
+.form-actions-main {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 15px;
+}
+.form-actions-main .button-primary {
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background-color: #28a745; /* Green for save */
+    color: white;
+}
+.form-actions-main .button-primary:hover {
+    background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+    .profile-sidebar {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .profile-page-header h1 { font-size: 1.6em;}
+    .profile-section h2 { font-size: 1.3em;}
+    .feedback-message { margin-left: 0; margin-right: 0;}
+    .profile-layout { padding: 15px; }
+    .profile-section { padding: 15px; }
+}

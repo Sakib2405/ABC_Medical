@@ -1,0 +1,357 @@
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #444;
+    background-color: #f0f2f5; /* Fallback */
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Dynamic Background Elements */
+.dynamic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 50%, #0f2027 100%);
+    animation: dynamicGradientBGRegister 20s ease infinite;
+    background-size: 300% 300%;
+    overflow: hidden;
+}
+
+@keyframes dynamicGradientBGRegister {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.dynamic-background::before,
+.dynamic-background::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    animation: floatShapesRegister 18s infinite linear;
+}
+
+.dynamic-background::before {
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.18);
+    top: 10%;
+    right: 5%;
+    animation-delay: -3s;
+}
+
+.dynamic-background::after {
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.12);
+    bottom: 15%;
+    left: 10%;
+    animation-delay: -8s;
+}
+
+@keyframes floatShapesRegister {
+    0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) translateX(-15px) rotate(170deg); }
+    100% { transform: translateY(0px) translateX(0px) rotate(360deg); }
+}
+
+/* Header */
+.form-page-header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+.logo .fa-hospital-symbol {
+    margin-right: 10px;
+    font-size: 1.7rem;
+}
+
+/* Main Content & Form Container */
+.form-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+
+.register-form-container {
+    width: 100%;
+    max-width: 550px; /* Adjusted for table layout */
+}
+
+.form-card {
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 30px 35px;
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    animation: formCardAppearRegister 0.7s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+@keyframes formCardAppearRegister {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.form-card h2 {
+    color: #005A9C;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-card .subtitle {
+    color: #4A5568;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Table-based Form Styling */
+.registration-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes default table spacing */
+    margin-bottom: 20px; /* Space before footer links */
+}
+
+.registration-table .label-cell {
+    text-align: left;
+    padding: 10px 10px 10px 0; /* Padding for label cells */
+    font-weight: 500;
+    color: #334155;
+    font-size: 0.9rem;
+    vertical-align: top; /* Align label to the top of the cell */
+    width: 30%; /* Adjust width as needed */
+}
+.registration-table .label-cell i {
+    margin-right: 8px;
+    color: #007BFF;
+}
+
+.registration-table .input-cell {
+    text-align: left;
+    padding: 10px 0 10px 10px; /* Padding for input cells */
+    vertical-align: top;
+}
+
+.registration-table input[type="text"],
+.registration-table input[type="email"],
+.registration-table input[type="password"] {
+    width: 100%;
+    padding: 10px 15px; /* Adjusted padding for inputs */
+    border: 1px solid #CFD8DC;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1E293B;
+    background-color: #F8FAFC;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.registration-table input[type="text"]:focus,
+.registration-table input[type="email"]:focus,
+.registration-table input[type="password"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15), inset 0 1px 2px rgba(0,0,0,0.04);
+    outline: none;
+    background-color: #fff;
+}
+
+.registration-table input.input-error-table { /* New error class for table inputs */
+    border-color: #D32F2F !important; /* Important to override focus if needed */
+    background-color: #FFEBEE !important;
+}
+.registration-table .error-text {
+    display: block;
+    color: #D32F2F;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    min-height: 1em; /* Reserve space to prevent layout shifts */
+    text-align: left;
+}
+
+.registration-table .button-cell {
+    padding-top: 20px; /* Space above the button */
+    text-align: center; /* Center the button */
+}
+
+
+/* Submit Button */
+.btn-register {
+    width: auto; /* Allow button to size based on content and padding */
+    min-width: 200px; /* Ensure a decent minimum width */
+    padding: 13px 30px; /* Generous padding for the button */
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+    letter-spacing: 0.5px;
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-register i {
+    margin-right: 10px;
+}
+
+.btn-register:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-register:active {
+    transform: translateY(0px);
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Form Footer Links */
+.form-footer-links {
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.form-footer-links p {
+    margin-bottom: 8px;
+    color: #4A5568;
+}
+
+.form-footer-links a {
+    color: #007BFF;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-footer-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+.form-footer-links .back-to-home i {
+    margin-right: 5px;
+}
+
+/* Message Styling */
+.message {
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+}
+.message ul { list-style-type: none; padding-left: 0; margin: 0; }
+.message ul li { margin-bottom: 5px; }
+
+.success-message {
+    background-color: #E6FFFA;
+    color: #00796B;
+    border-color: #B2F5EA;
+}
+.success-message a { color: #00796B; font-weight: bold; }
+
+.error-message {
+    background-color: #FFF5F5;
+    color: #C53030;
+    border-color: #FED7D7;
+}
+.error-message a { color: #C53030; font-weight: bold; }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-page-header {
+        padding: 8px 15px;
+    }
+    .logo { font-size: 1.2rem; }
+    .logo .fa-hospital-symbol { font-size: 1.5rem; }
+
+    .form-card {
+        padding: 25px 20px;
+    }
+    .form-card h2 { font-size: 1.6rem; }
+    .register-form-container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 500px) { /* Adjusted breakpoint for table layout */
+    .page-wrapper { padding: 10px; }
+    .form-card { padding: 20px 15px; }
+    .form-card h2 { font-size: 1.5rem; }
+
+    .registration-table .label-cell,
+    .registration-table .input-cell {
+        display: block; /* Stack label and input */
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .registration-table .label-cell {
+        padding-bottom: 5px; /* Space between stacked label and input */
+    }
+    .registration-table .input-cell {
+        padding-top: 0; /* Remove top padding when stacked */
+    }
+    .registration-table input[type="text"],
+    .registration-table input[type="email"],
+    .registration-table input[type="password"] {
+        font-size: 0.95rem;
+    }
+    .btn-register {
+        width: 100%; /* Full width button on small screens */
+        font-size: 1rem;
+    }
+}

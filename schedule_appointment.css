@@ -1,0 +1,181 @@
+body { /* Assuming global styles might be in style.css */
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f7; /* Light, calm background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.schedule-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.schedule-header h1 {
+    font-size: 1.9em;
+    color: #007bff; /* Primary theme color */
+    margin: 0 0 5px 0;
+}
+.schedule-header p {
+    font-size: 1em;
+    color: #555;
+    margin:0;
+}
+
+/* Feedback Messages */
+.feedback-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+}
+.feedback-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.feedback-message.error ul {
+    margin: 5px 0 0 20px;
+    padding: 0;
+}
+.feedback-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* Form Styling */
+.schedule-form .form-group {
+    margin-bottom: 20px;
+}
+
+.schedule-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #495057;
+}
+
+.schedule-form input[type="text"],
+.schedule-form input[type="date"],
+.schedule-form input[type="time"],
+.schedule-form select,
+.schedule-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.schedule-form input[type="text"][readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.schedule-form input:focus,
+.schedule-form select:focus,
+.schedule-form textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.schedule-form .form-group-inline {
+    display: flex;
+    gap: 20px; /* Space between inline form groups */
+    align-items: flex-start; /* Align items to the top */
+}
+.schedule-form .form-group-inline .form-group {
+    flex: 1; /* Each group takes equal space */
+    margin-bottom: 0; /* Remove bottom margin if it's the only element */
+}
+
+.schedule-form small {
+    display: block;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.schedule-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.form-actions .button-primary,
+.form-actions .button-secondary {
+    padding: 12px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.form-actions .button-primary {
+    background-color: #007bff;
+    color: white;
+}
+.form-actions .button-primary:hover {
+    background-color: #0056b3;
+}
+.form-actions .button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.form-actions .button-secondary:hover {
+    background-color: #545b62;
+}
+
+.availability-note {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e9f5ff;
+    border: 1px solid #b8dGff;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #004085;
+    text-align: center;
+}
+.availability-note strong {
+    font-weight: 600;
+}
+
+/* Responsive adjustments for inline group */
+@media (max-width: 600px) {
+    .schedule-form .form-group-inline {
+        flex-direction: column; /* Stack inline items on smaller screens */
+        gap: 0; /* Remove gap when stacked */
+    }
+    .schedule-form .form-group-inline .form-group {
+        margin-bottom: 20px; /* Add back margin when stacked */
+        width: 100%;
+    }
+     .schedule-form .form-group-inline .form-group:last-child {
+        margin-bottom: 0;
+    }
+}

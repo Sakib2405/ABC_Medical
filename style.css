@@ -1,0 +1,498 @@
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* Added for absolute positioning of profile dropdown */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Primary link color */
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.8em;
+    font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #ffffff; /* White header background */
+    padding: 1em 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure header is above most content but below profile dropdown */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #00796b; /* Teal color for logo */
+}
+
+.logo .fa-hospital-symbol {
+    font-size: 2.5rem; /* Larger icon */
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.8rem; /* Adjusted logo text size */
+    margin: 0;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: #333;
+    font-weight: 500;
+    padding: 0.5em 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00796b; /* Teal underline */
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #00796b; /* Teal for active/hover */
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
+
+.mobile-nav-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Main Content Area */
+.site-main {
+    flex-grow: 1; /* Ensures footer stays at bottom */
+    padding: 40px 0;
+}
+
+.content-area {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Panel Styles (User/Admin Welcome Panels) */
+.panel {
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.user-panel, .user-dashboard-panel { /* Combined for consistency */
+    background-color: #e0f7fa; /* Light cyan background */
+    border-left: 5px solid #00796b; /* Teal accent */
+}
+
+.admin-panel, .admin-dashboard-panel { /* Combined for consistency */
+    background-color: #fff3e0; /* Light orange background */
+    border-left: 5px solid #ff9800; /* Orange accent */
+}
+
+.panel-header h2 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+.welcome-message { /* From original index.php, can be used in user/admin panels */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.welcome-message strong {
+    color: #00796b; /* Teal for user name */
+}
+.admin-panel .welcome-message strong {
+    color: #ff9800; /* Orange for admin name */
+}
+
+.panel-body p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.panel-actions { /* From original index.php, can be used in user/admin panels */
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Pill-shaped buttons */
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+    color: #fff;
+}
+
+.btn-tertiary {
+    background-color: #28a745;
+    color: #fff;
+}
+.btn-tertiary:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    color: #fff;
+}
+
+/* Hero Section (for Guest View) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    gap: 30px;
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    padding: 40px;
+}
+
+.hero-content { flex: 1; max-width: 50%; }
+.hero-content h2 { font-size: 2.8rem; color: #004d40; margin-bottom: 20px; }
+.hero-content p { font-size: 1.1rem; color: #00695c; margin-bottom: 30px; }
+.hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+.hero-image-container { flex: 1; max-width: 45%; text-align: center; }
+.hero-image { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+
+/* Features Section (for Guest View) */
+.features-section { padding: 40px 0; text-align: center; }
+.section-title { font-size: 2.2rem; color: #333; margin-bottom: 40px; position: relative; display: inline-block; }
+.section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #00796b; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+.feature-item { background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.feature-item:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+.feature-item i { font-size: 3rem; color: #00796b; margin-bottom: 15px; }
+.feature-item h3 { font-size: 1.4rem; color: #333; margin-bottom: 10px; }
+.feature-item p { font-size: 0.95rem; color: #666; }
+
+
+/* Styles for the user profile dropdown - MOVED FROM index.php */
+.user-profile-dropdown {
+    position: absolute; /* Relative to body if body has position:relative */
+    top: 15px; /* Adjusted for better alignment with header */
+    right: 20px;
+    z-index: 1010; /* Ensure it's above the sticky header */
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px; /* Padding around the image */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background for visibility */
+}
+
+.profile-trigger:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* White border to stand out */
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: calc(100% + 5px); /* Position below the trigger with a small gap */
+    right: 0;
+    background-color: #ffffff;
+    min-width: 220px; /* Slightly wider */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Softer shadow */
+    border-radius: 8px;
+    padding: 8px 0; /* Reduced padding */
+    margin-top: 5px; /* Consistent gap */
+    animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.profile-dropdown-content.show-dropdown {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 12px 18px; /* Increased padding */
+    border-bottom: 1px solid #e9ecef; /* Lighter border */
+    margin-bottom: 5px;
+}
+.dropdown-header strong {
+    color: #212529; /* Darker text */
+    font-size: 1rem;
+    display: block;
+}
+.dropdown-header span {
+    font-size: 0.8rem;
+    color: #6c757d; /* Grayer text */
+    display: block;
+    margin-top: 2px;
+}
+
+.profile-dropdown-content a {
+    color: #495057; /* Slightly darker link color */
+    padding: 10px 18px; /* Adjusted padding */
+    text-decoration: none;
+    display: flex; /* For icon alignment */
+    align-items: center;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-dropdown-content a i {
+    margin-right: 12px; /* More space for icon */
+    color: #00796b;
+    width: 18px; /* Ensure icons align */
+    text-align: center;
+    font-size: 0.95rem; /* Slightly larger icons */
+}
+
+.profile-dropdown-content a:hover {
+    background-color: #e9ecef; /* Lighter hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+.profile-dropdown-content a:hover i {
+    color: #0056b3;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 8px 0; /* Increased margin */
+}
+
+/* Logged-in specific content styling (Dashboard Cards) - MOVED FROM index.php */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly smaller minmax */
+    gap: 20px; /* Reduced gap */
+    margin-top: 30px;
+}
+.dashboard-card {
+    background-color: #ffffff;
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px; /* More rounded */
+    border: 1px solid #e9ecef; /* Subtle border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+    display: flex; /* For better internal alignment */
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+.dashboard-card i.fas { /* Target Font Awesome icons specifically if needed */
+    font-size: 2.2rem; /* Slightly smaller icon */
+    color: #00796b;
+    margin-bottom: 12px;
+    line-height: 1; /* Ensure icon doesn't add extra space */
+}
+.dashboard-card h3 {
+    font-size: 1.2rem; /* Slightly smaller heading */
+    font-family: 'Montserrat', sans-serif; /* Consistent heading font */
+    color: #343a40; /* Darker heading */
+    margin-bottom: 8px;
+}
+.dashboard-card p {
+    font-size: 0.85rem; /* Slightly smaller text */
+    color: #6c757d;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows text to take available space before button */
+}
+.dashboard-card .btn {
+    margin-top: auto; /* Pushes button to bottom */
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 0.9rem;
+}
+
+
+/* Footer Styles */
+.site-footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 40px 0 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-about h3, .footer-links h4, .footer-contact h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-about p, .footer-contact p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #adb5bd;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 8px; }
+.footer-links ul li a { color: #adb5bd; transition: color 0.3s ease, padding-left 0.3s ease; }
+.footer-links ul li a:hover { color: #ffffff; padding-left: 5px; }
+.footer-contact i { margin-right: 10px; color: #00796b; }
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #495057;
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-content, .hero-image-container { max-width: 100%; }
+    .hero-image-container { margin-top: 30px; }
+    .user-profile-dropdown { top: 10px; right: 10px; } /* Adjust for smaller screens */
+}
+
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; align-items: flex-start; }
+    .main-nav { width: 100%; display: none; margin-top: 15px; }
+    .main-nav.active { display: block; }
+    .main-nav ul { flex-direction: column; width: 100%; }
+    .main-nav ul li { margin: 10px 0; text-align: center; width: 100%; }
+    .main-nav ul li a { display: block; padding: 10px; background-color: #f1f1f1; border-radius: 4px; }
+    .main-nav ul li a:hover, .main-nav ul li a.active { background-color: #e0f7fa; }
+    .main-nav ul li a::after { display: none; }
+    .mobile-nav-toggle { display: block; position: absolute; top: 25px; right: 25px; }
+    .logo h1 { font-size: 1.6rem; }
+    .logo .fa-hospital-symbol { font-size: 2rem; }
+    .hero-content h2 { font-size: 2.2rem; }
+    .hero-actions { justify-content: center; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-about, .footer-links, .footer-contact { margin-bottom: 20px; }
+    .profile-dropdown-content { min-width: 180px; /* Make dropdown slightly narrower on mobile */ }
+}
+

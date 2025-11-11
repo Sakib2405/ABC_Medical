@@ -1,0 +1,317 @@
+/* settings.css */
+/* Styles specific to the settings page, building upon profile.css */
+
+/* Change background for the main content area of the settings page */
+.settings-main-content {
+    background-color: #F9FAFB; /* A very light gray, almost white - Tailwind gray-50 */
+}
+
+.settings-section {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* Slightly softer shadow */
+    border: 1px solid #E5E7EB; /* Tailwind gray-200 border */
+}
+
+.settings-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem; /* Slightly smaller for more sections */
+    color: #1F2937; /* Tailwind gray-800 */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E5E7EB; /* Tailwind gray-200 */
+    display: flex;
+    align-items: center;
+}
+
+.settings-section h3 i.fas {
+    margin-right: 12px;
+    color: #4F46E5; /* Indigo-600 - a new accent for settings */
+    font-size: 1.2rem; /* Slightly smaller icon */
+}
+
+.settings-form {
+    margin-top: 15px;
+}
+
+.form-group-settings {
+    margin-bottom: 22px;
+}
+
+.form-group-settings label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151; /* Tailwind gray-700 */
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.required-star {
+    color: #EF4444; /* Tailwind red-500 */
+}
+
+.form-group-settings input[type="text"],
+.form-group-settings input[type="email"],
+.form-group-settings input[type="password"],
+.form-group-settings input[type="file"] {
+    width: 100%;
+    padding: 10px 14px; /* Adjusted padding */
+    border: 1px solid #D1D5DB; /* Tailwind gray-300 */
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    color: #111827; /* Tailwind gray-900 */
+    background-color: #FFFFFF;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group-settings input[type="file"] {
+    padding: 8px 12px; /* Specific padding for file input */
+    background-color: #F9FAFB;
+}
+
+
+.form-group-settings input[type="text"]:focus,
+.form-group-settings input[type="email"]:focus,
+.form-group-settings input[type="password"]:focus,
+.form-group-settings input[type="file"]:focus {
+    border-color: #4F46E5; /* Indigo-600 focus */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    outline: none;
+}
+
+.form-group-settings input.readonly-input {
+    background-color: #F3F4F6; /* Tailwind gray-100 */
+    color: #6B7280; /* Tailwind gray-500 */
+    cursor: not-allowed;
+    border-color: #E5E7EB;
+}
+
+.form-group-settings .form-text {
+    font-size: 0.8rem;
+    color: #6B7280;
+    display: block;
+    margin-top: 6px;
+}
+
+/* Profile Picture Section */
+.profile-picture-section .current-profile-pic {
+    margin-bottom: 20px;
+    text-align: center; /* Center the image container */
+}
+.profile-picture-section .current-profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    object-fit: cover;
+    display: inline-block;
+}
+.form-group-settings input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden; /* Basic way to hide default button, more styling often needed */
+    display: none; /* Ensure it's fully hidden */
+}
+.form-group-settings input[type="file"]::before {
+  /* More complex styling for custom file input button would go here if you want to replace the default one */
+  /* For now, the default browser styling for the file input (excluding the button) will show */
+}
+
+
+/* Checkbox Group for Notification Preferences & 2FA */
+.form-group-settings.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #F9FAFB; /* Light background for checkbox groups */
+    border: 1px solid #E5E7EB;
+}
+.form-group-settings.checkbox-group input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #4F46E5; /* Indigo-600 */
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.form-group-settings.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #374151;
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
+.btn-submit-settings {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    background-color: #4F46E5; /* Indigo-600 */
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem; /* Slightly smaller button text */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+.btn-submit-settings i.fas {
+    margin-right: 8px;
+    font-size: 0.85rem;
+}
+.btn-submit-settings:hover {
+    background-color: #4338CA; /* Indigo-700 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+.btn-submit-settings:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+.btn-submit-settings:disabled {
+    background-color: #9CA3AF; /* Tailwind gray-400 */
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Delete Account Section Specifics */
+.delete-account-section {
+    border-left: 4px solid #EF4444; /* Red accent for danger */
+    background-color: #FEF2F2; /* Tailwind red-50 */
+}
+.delete-account-section h3 i.fas {
+    color: #EF4444; /* Red icon */
+}
+.warning-text {
+    color: #B91C1C; /* Tailwind red-700 */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #FEE2E2; /* Tailwind red-100 */
+    border: 1px solid #FECACA; /* Tailwind red-300 */
+    border-radius: 6px;
+}
+.btn-delete-settings {
+    background-color: #EF4444; /* Tailwind red-500 */
+    color: #FFFFFF;
+}
+.btn-delete-settings:hover {
+    background-color: #DC2626; /* Tailwind red-600 */
+    box-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
+}
+
+
+/* Message styling for settings page */
+.message { 
+    padding: 12px 18px; /* Adjusted padding */
+    margin-bottom: 20px;
+    border-radius: 6px; /* Consistent border radius */
+    font-size: 0.9rem;
+    text-align: left;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+}
+.message::before { 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.1rem; /* Slightly smaller icon */
+}
+
+.message.success-message-settings {
+    background-color: #ECFDF5; /* Tailwind green-50 */
+    color: #047857; /* Tailwind green-700 */
+    border-color: #A7F3D0; /* Tailwind green-300 */
+}
+.message.success-message-settings::before {
+    content: "\f058"; 
+    color: #047857;
+}
+
+.message.error-message-settings {
+    background-color: #FEF2F2; /* Tailwind red-50 */
+    color: #B91C1C; /* Tailwind red-700 */
+    border-color: #FECACA; /* Tailwind red-300 */
+}
+.message.error-message-settings::before {
+    content: "\f071"; 
+    color: #B91C1C;
+}
+.message.warning-message-settings { /* For delete account confirmation */
+    background-color: #FFFBEB; /* Tailwind yellow-50 */
+    color: #B45309; /* Tailwind yellow-700 */
+    border-color: #FDE68A; /* Tailwind yellow-300 */
+}
+.message.warning-message-settings::before {
+    content: "\f06a"; /* fas fa-exclamation-circle */
+    color: #B45309;
+}
+
+
+.message ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+.message ul li {
+    margin-bottom: 5px;
+}
+.message ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for settings page */
+@media (max-width: 768px) {
+    .settings-main-content {
+        /* Sidebar might be horizontal or collapsed, adjust padding if needed */
+    }
+    .settings-section {
+        padding: 20px;
+    }
+    .settings-section h3 {
+        font-size: 1.25rem;
+    }
+    .settings-section h3 i.fas {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .settings-section {
+        padding: 20px 15px;
+    }
+    .form-group-settings input[type="text"],
+    .form-group-settings input[type="email"],
+    .form-group-settings input[type="password"],
+    .form-group-settings input[type="file"] {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    .btn-submit-settings, .btn-delete-settings {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        width: 100%; 
+        justify-content: center;
+    }
+    .form-group-settings.checkbox-group label {
+        font-size: 0.9rem;
+    }
+    .profile-picture-section .current-profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+}

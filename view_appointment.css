@@ -1,0 +1,236 @@
+/* view_appointment.css */
+/* Styles specific to the view appointment details page */
+
+.view-appointment-section {
+    margin-top: 20px;
+}
+
+.appointment-summary-card {
+    background-color: #FFFFFF;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Softer, larger shadow */
+    overflow: hidden; /* To ensure border-radius applies to header */
+}
+
+.appointment-summary-card .card-header {
+    background-color: #4A55A2; /* Primary accent color */
+    color: #FFFFFF;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.appointment-summary-card .card-header i.fas {
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+.appointment-summary-card .card-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #FFFFFF;
+    border-bottom: none; /* Override default h3 border from other sections */
+    padding-bottom: 0;
+}
+
+/* Status badge from appointments.css is reused, ensure it's available */
+/* .status-badge defined in appointments.css */
+
+.appointment-summary-card .card-body {
+    padding: 25px 30px; /* More padding in body */
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px 30px; /* Row and column gap */
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    background-color: #F8F9FA; /* Light background for each item */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #E9ECEF;
+    display: flex;
+    flex-direction: column; /* Stack label and value */
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6C757D; /* Gray label text */
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+.detail-label i.fas {
+    margin-right: 8px;
+    color: #4A55A2; /* Accent color for icons */
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: #212529; /* Darker value text */
+    font-weight: 500;
+}
+
+.notes-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #CED4DA; /* Dashed separator */
+}
+.notes-section.doctor-notes {
+    background-color: #EBF4FF; /* Light blue background for doctor notes */
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #4A55A2;
+}
+.notes-section.cancellation-notes {
+    background-color: #FFF3CD; /* Light yellow for cancellation */
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #FFC107;
+}
+
+
+.notes-section h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #343A40;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.notes-section h4 i.fas {
+    margin-right: 10px;
+    color: #4A55A2;
+}
+.notes-section.cancellation-notes h4 i.fas {
+    color: #FFC107;
+}
+
+
+.notes-section p {
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.7;
+    white-space: pre-wrap; /* Preserve line breaks from textarea */
+    background-color: #FFFFFF; /* White background for notes paragraph */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #E9ECEF;
+}
+.notes-section.doctor-notes p, .notes-section.cancellation-notes p {
+    background-color: transparent; /* Remove inner white background if section has bg */
+    border: none;
+    padding: 0;
+}
+
+
+.appointment-summary-card .card-footer {
+    background-color: #F8F9FA;
+    padding: 20px 25px;
+    text-align: right; /* Align buttons to the right */
+    border-top: 1px solid #E9ECEF;
+}
+
+.btn-action-card {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    margin-left: 10px;
+    border: 1px solid transparent;
+}
+.btn-action-card i.fas {
+    margin-right: 8px;
+}
+
+.btn-action-card.reschedule {
+    background-color: #FFC107; /* Yellow */
+    color: #212529;
+    border-color: #FFC107;
+}
+.btn-action-card.reschedule:hover {
+    background-color: #FFCA2C;
+    border-color: #FFCA2C;
+    transform: translateY(-1px);
+}
+
+.btn-action-card.cancel {
+    background-color: #DC3545; /* Red */
+    color: #FFFFFF;
+    border-color: #DC3545;
+}
+.btn-action-card.cancel:hover {
+    background-color: #C82333;
+    border-color: #C82333;
+    transform: translateY(-1px);
+}
+
+.btn-action-card.back {
+    background-color: #6C757D; /* Gray */
+    color: #FFFFFF;
+    border-color: #6C757D;
+}
+.btn-action-card.back:hover {
+    background-color: #5A6268;
+    border-color: #5A6268;
+    transform: translateY(-1px);
+}
+
+.no-details {
+    padding: 20px;
+    text-align: center;
+    color: #6C757D;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    border: 1px dashed #DEE2E6;
+}
+
+.message.standalone-message { /* For error messages directly on this page */
+    margin: 0 0 20px 0; /* Adjust margin if it's the only content */
+}
+
+
+/* Responsive adjustments for view appointment page */
+@media (max-width: 768px) {
+    .appointment-summary-card .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .appointment-summary-card .card-header h3 {
+        font-size: 1.2rem;
+    }
+    .appointment-summary-card .card-body {
+        padding: 20px;
+    }
+    .detail-grid {
+        grid-template-columns: 1fr; /* Stack details on smaller screens */
+        gap: 15px;
+    }
+    .appointment-summary-card .card-footer {
+        text-align: center;
+    }
+    .btn-action-card {
+        display: block; /* Stack buttons */
+        margin: 10px auto;
+        width: calc(100% - 20px); /* Full width with some margin */
+        text-align: center;
+    }
+     .btn-action-card:first-child {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007bff; /* Blue heading for appointment card */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.appointment-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+}
+
+.detail-item {
+    margin-bottom: 12px;
+    padding: 8px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+    display: inline-block;
+    width: 150px; /* Adjust as needed */
+}
+
+.value {
+    color: #333;
+}
+
+.detail-item.notes .value {
+    display: block; /* Makes notes appear on a new line if they are long */
+    margin-top: 5px;
+    white-space: pre-wrap; /* Respects newlines in the notes */
+}
+
+.error-message {
+    color: #D8000C; /* Red for errors */
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
